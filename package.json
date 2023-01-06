@@ -1,0 +1,31 @@
+{
+  "name": "model-view-controller--mvc--challenge-tech-blog",
+  "version": "1.0.0",
+  "description": "HW CHALLENGE #14",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannybear88/Model-View-Controller--MVC--Challenge-Tech-Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannybear88/Model-View-Controller--MVC--Challenge-Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/hannybear88/Model-View-Controller--MVC--Challenge-Tech-Blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "package": "^1.0.1",
+    "sequelize": "^6.28.0"
+  }
+}
