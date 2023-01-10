@@ -1,5 +1,5 @@
 function logout() {
-    fetch("/api/user/logout", {
+    fetch("/api/users/logout", {
       method: "post",
       headers: { "Content-Type": "application/json" }
     })
