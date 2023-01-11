@@ -4,7 +4,7 @@
     <div class="card-header flex-row justify-space-between">
       <h2>{{title}}</h2>
       <div>
-        Posted by {{User.username}} on {{format_date date_created}}
+        Posted by {{user.username}} on {{format_date date_created}}
       </div>
     </div>
     <div class="card-body">
@@ -13,7 +13,8 @@
   </article>
 
 <!-- add comment -->
-  {{#if post.Comments}}
+  {{!-- {{#if post.Comments}} --}}
+    {{#if Comments}}
     <section class="card">
       <div class="card-header">
         <h3>Comments</h3>
