@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const { Post } = require("../models/");
+const { Post, User } = require("../models/");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
-  console.log("**************************************posts: ");
+  console.log(User);
     Post.findAll({
       where: {
         user_id: req.session.user_id
       },
-      include: [{ model: username }],
+      include: [{ model: User }],
     })
       .then(dbPostData => {
         const posts = dbPostData.map((post) => post.get({ plain: true }));
