@@ -1,9 +1,10 @@
+<!-- single post -->
 <div class="post">
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       <h2>{{post.title}}</h2>
       <div>
-        Posted by {{post.User.username}} on {{format_date post.createdAt}}
+        Posted by {{post.User.username}} on {{format_date date_created}}
       </div>
     </div>
     <div class="card-body">
@@ -11,12 +12,12 @@
     </div>
   </article>
 
+<!-- add comment -->
   {{#if post.Comments}}
     <section class="card">
       <div class="card-header">
         <h3>Comments</h3>
       </div>
-
       <div class="card-body">
         {{#each post.Comments}}
           <div>
@@ -24,7 +25,7 @@
               {{body}}
             </p>
             <p>
-              &mdash; {{user.username}}, {{format_date createdAt}}
+              &mdash; {{user.username}}, {{format_date date_created}}
             </p>
           </div>
         {{/each}}
@@ -49,4 +50,5 @@
   </form>
 </div>
 
+{{! Path: public/js/comment.js }}
 <script src="/js/comment.js"></script>
