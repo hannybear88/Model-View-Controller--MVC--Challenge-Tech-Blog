@@ -20,7 +20,8 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('all-posts', { 
       posts, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      username: req.session.username,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -33,14 +34,14 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('post', {
+    res.render('single-post', {
       ...post,
       logged_in: req.session.logged_in
     });
