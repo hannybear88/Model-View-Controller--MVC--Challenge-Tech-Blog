@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
+console.log("inside the comments controller")
 router.get('/', (req,res) => {
     Comment.findAll({})
     .then(commentData => res.json(commentData))
@@ -25,13 +25,15 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+  console.log("inside the comment post route ")
   try {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
     });
     res.json(newComment);
-  } catch (err) {
+  } catch (err) { 
+    console.log("err:  ------ >", err);
     res.status(500).json(err);
   }
 });

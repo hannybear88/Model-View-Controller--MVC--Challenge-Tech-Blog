@@ -22,9 +22,16 @@ const editFormHandler = async function(event) {
 
 const deleteClickHandler = async function() {
   await fetch(`/api/posts/${postId}`, {
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
   });
-
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  }
+  else {
+    alert('Failed to delete post.');
+  }
+  
   document.location.replace('/dashboard');
 };
 
