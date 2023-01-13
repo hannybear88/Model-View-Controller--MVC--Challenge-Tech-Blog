@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
+
 console.log("inside the comments controller")
+
 router.get('/', (req,res) => {
     Comment.findAll({})
     .then(commentData => res.json(commentData))
