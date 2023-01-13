@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     const userData = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.userId = userData.id;
       req.session.username = userData.username;
       req.session.logged_in = true;
 
@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.userId = userData.id;
       req.session.username = userData.username;
       req.session.logged_in = true;
       
@@ -67,7 +67,7 @@ router.post('/logout', async (req, res) => {
 });
 router.delete("/user/:id", async (req, res) => {
   try {
-    const deleteUser = await User.destroy({ where: { user_id: req.body.user_id } 
+    const deleteUser = await User.destroy({ where: { userId: req.body.userId } 
     });
 
     if (!userData) {
