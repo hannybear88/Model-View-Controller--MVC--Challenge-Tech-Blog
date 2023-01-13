@@ -30,17 +30,17 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/post/:id', async (req, res) => {
+
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
        User,
-       {
-        model: Post,
-        include: [User]
-       }
+      //  {
+      //   model: Post,
+      //   include: [User]
+      //  }
       ],
     });
-
     const post = postData.get({ plain: true });
 
     console.log("single-post", post)
